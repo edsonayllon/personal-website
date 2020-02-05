@@ -15,6 +15,6 @@ Personal website for links to social media, possibly for use as a resume in the 
 
 ## Preview
 
-Viewable at: [`arweave/5_bpJ6...`](http://arweave.net/5_bpJ6RyoPg7qTqwKxnxfKXs1R_Mabm3MCUCf_ajJY8)
+Viewable at: [`arweave/vZVnqx21...`](https://arweave.net/vZVnqx21b86sbnnV7f708Fpb--BeGM5X3w8Qo1sQpqU), [`ipfs/QmZdWv...`](https://ipfs.io/ipfs/QmZdWvDxPz1URtwyak2Mnse1wabMy8dxBLSUSubn3x4d1W)
 
 ![Preview](./screenshot.png)
