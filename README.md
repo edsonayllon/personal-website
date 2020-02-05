@@ -12,3 +12,9 @@ twitter: https://twitter.com/relativeread
 # Personal Website
 
 Personal website for links to social media, possibly for use as a resume in the future. 
+
+## Preview
+
+Viewable at: [`arweave/5_bpJ6...`](http://arweave.net/5_bpJ6RyoPg7qTqwKxnxfKXs1R_Mabm3MCUCf_ajJY8)
+
+![Preview](./screenshot.png)
