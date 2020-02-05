@@ -1,7 +1,8 @@
 body {
-    background-color: black;
-    color: white;
     font-family: 'Poppins', sans-serif;
+    padding: 0;
+    margin: 0;
+    background-color: black;
 }
 
 @keyframes slideInFromLeft {
@@ -20,7 +21,38 @@ header {
     display: flex;
     justify-content: center;
     flex-direction: column;
-    padding: 50vh 10% 0%;
+    padding: 50vh 10vw 30vw;
+}
+
+footer {
+    padding: 15vh 10vw 2.5vw;
+}
+
+footer.dark-section small {
+    color: #444;
+}
+
+footer.dark-section a {
+    text-decoration: none;
+    color: #666;
+}
+
+
+.light-section {
+    background-color: white;
+    color: black;
+}
+
+.dark-section {
+    background-color: black;
+    color: white;
+}
+
+section {
+    padding: 25vw 10vw;
+}
+
+header > * {
     animation: 1.125s ease 0s 1 slideInFromLeft;
 }
 
@@ -43,9 +75,20 @@ header h2 {
     margin: 0;
 }
 
+section h2 {
+    font-size: 3vw;
+    margin-bottom: 5vw;
+}
+
+
+section.medium-widget {
+    margin: 0;
+    padding: 0;
+}
+
 nav {
     display: flex;
-    padding: 25% 0 20%;
+    padding: 20vw 0 0;
 }
 
 nav ul {

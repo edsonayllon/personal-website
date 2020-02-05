@@ -10,25 +10,56 @@
 </head>
 
 <body>
-    <header>
+    <header class="dark-section">
         <h2>Exceptional diligence breeds quality</h2>
         <h1>Edson Ayllon<span>&mdash;Software engineer, digital creator.</span></h1>
         <nav data-aos="fade">
             <ul>
                 <li>
-                    <a href="">Github</a>
+                    <a href="https://github.com/edsonayllon" rel="noopener noreferrer" target="_blank">
+                        Github
+                    </a>
                 </li>
                 <li>
-                    <a href="">Medium</a>
+                    <a href="https://www.linkedin.com/in/edson-ayllon/" rel="noopener noreferrer" target="_blank">
+                        LinkedIn
+                    </a>
                 </li>
                 <li>
-                    <a href="">Twitter</a>
+                    <a href="https://medium.com/@edsonayllon" rel="noopener noreferrer" target="_blank">
+                        Medium
+                    </a>
                 </li>
+                <!--<li>
+                    <a href="https://twitter.com/relativeread" rel="noopener noreferrer" target="_blank">
+                        Twitter
+                    </a>
+                </li>-->
+
                 <li>
-                    <a href="">Twitch</a>
+                    <a href="https://www.twitch.tv/edson6" rel="noopener noreferrer" target="_blank">
+                        Twitch
+                    </a>
                 </li>
             </ul>
         </nav>
     </header>
+    <section class="light-section">
+        <h2>Latest Articles</h2>
+        <div id="medium-widget"></div>
+    </section>
+    <footer class="dark-section">
+        <small>&copy; Copyright 2020, Edson Ayllon. 
+            Published using 
+            <a href="https://www.arweave.org/" rel="noopener noreferrer" target="_blank">
+                Arweave
+            </a> and 
+            <a href="https://ipfs.io/" rel="noopener noreferrer" target="_blank">
+                IPFS
+            </a>
+        </small>
+    </footer>
+    <script src="https://medium-widget.pixelpoint.io/widget.js"></script>
+    <script>MediumWidget.Init({renderTo: '#medium-widget', params: {"resource":"https://medium.com/@edsonayllon","postsPerLine":3,"limit":3,"picture":"big","fields":["description","publishAt"],"ratio":"landscape"}})</script>
 </body>
 </html>
