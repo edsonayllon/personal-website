@@ -1,18 +1,19 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <title>Edson Ayllon</title>
-  <meta name="description" content="Edson's personal website">
-  <meta name="author" content="Edson Ayllon">
-  <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
+    <meta charset="utf-8">
+    <title>Edson Ayllon</title>
+    <meta name="description" content="Edson's personal website">
+    <meta name="author" content="Edson Ayllon">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.rawgit.com/IonicaBizau/github-calendar/gh-pages/dist/github-calendar.css"/>
 </head>
 
 <body>
     <header class="dark-section">
-        <h2>Exceptional diligence breeds quality</h2>
-        <h1>Edson Ayllon<span>&mdash;Software engineer, digital creator.</span></h1>
+        <h2 >Exceptional diligence breeds quality</h2>
+        <h1 >Edson Ayllon<span>&mdash;Software engineer, digital creator.</span></h1>
         <nav data-aos="fade">
             <ul>
                 <li>
@@ -45,10 +46,60 @@
         </nav>
     </header>
     <section class="light-section">
+        <h2>My pleasure to meet.</h2>
+        <h3>
+            I contribute to multiple open source projects in Ethereum's ecosystem. 
+            I also provide documentation to The Ethereum Foundation ongoing calls. 
+        </h3>
+
+    </section>
+    <section class="dark-section">
         <h2>Latest Articles</h2>
         <div id="medium-widget"></div>
     </section>
+    <section class="light-section">
+        <h2>Github Activity</h2>
+        <div class="calendar">
+            <!-- Loading stuff -->
+            Loading for you
+        </div>
+    </section>
+
     <footer class="dark-section">
+        <nav>
+            <ul>
+                <li>
+                    <a href="https://twitter.com/relativeread" rel="noopener noreferrer" target="_blank">
+                        Twitter
+                    </a>
+                </li>
+                <li>
+                    <a href="https://medium.com/@edsonayllon" rel="noopener noreferrer" target="_blank">
+                        Medium
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.youtube.com/channel/UCWsTqY1eiZ67bCJ9vm1hKbA" rel="noopener noreferrer" target="_blank">
+                        Youtube
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.twitch.tv/edson6" rel="noopener noreferrer" target="_blank">
+                        Twitch
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.instagram.com/edsonrayllon/" rel="noopener noreferrer" target="_blank">
+                        Instagram
+                    </a>
+                </li>
+                <li>
+                    <a href="mailto:mail@edsonayllon.com" rel="noopener noreferrer" target="_blank">
+                        Email
+                    </a>
+                </li>
+            </ul>
+        </nav>
         <small>&copy; Copyright 2020, Edson Ayllon. 
             Published using 
             <a href="https://www.arweave.org/" rel="noopener noreferrer" target="_blank">
@@ -61,5 +112,9 @@
     </footer>
     <script src="https://medium-widget.pixelpoint.io/widget.js"></script>
     <script>MediumWidget.Init({renderTo: '#medium-widget', params: {"resource":"https://medium.com/@edsonayllon","postsPerLine":3,"limit":3,"picture":"big","fields":["description","publishAt"],"ratio":"landscape"}})</script>
+    <script src="https://unpkg.com/github-calendar@latest/dist/github-calendar.min.js"></script>
+    <script>
+        GitHubCalendar(".calendar", "edsonayllon");
+    </script>
 </body>
 </html>

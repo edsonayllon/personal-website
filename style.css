@@ -17,6 +17,11 @@ body {
 }
 
 
+section {
+    padding: 12.5vw 10vw;
+}
+
+
 header {
     display: flex;
     justify-content: center;
@@ -24,19 +29,69 @@ header {
     padding: 50vh 10vw 30vw;
 }
 
+header > * {
+    animation: 1.125s ease 0s 1 slideInFromLeft;
+}
+
 footer {
-    padding: 15vh 10vw 2.5vw;
+    padding: 20vh 10vw 2.5vw;
 }
 
 footer.dark-section small {
-    color: #444;
+    color: #777;
+}
+
+footer a {
+    text-decoration: none;
 }
 
 footer.dark-section a {
-    text-decoration: none;
-    color: #666;
+    color: white;
 }
 
+footer.light-section a {
+    color: black;
+}
+
+footer.light-section small {
+    color: rgb(0, 0, 0, 0.25);;
+}
+
+section .grid {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+section a {
+    text-decoration: none;
+    font-weight: 900;
+}
+
+.dark-section .medium-widget-article__title {
+    color: rgb(255, 255, 255, 0.9);
+}
+
+
+.dark-section .medium-widget-article__description, .dark-section .medium-widget-article__date {
+    color: rgb(255, 255, 255, 0.5);
+}
+
+
+
+div.calendar {
+    border: none;
+    margin: 0;
+}
+
+div.calendar div {
+    border: none;
+}
+
+.dark-section .contrib-number {
+    color: rgb(255, 255, 255, 0.625);
+}
 
 .light-section {
     background-color: white;
@@ -46,14 +101,6 @@ footer.dark-section a {
 .dark-section {
     background-color: black;
     color: white;
-}
-
-section {
-    padding: 25vw 10vw;
-}
-
-header > * {
-    animation: 1.125s ease 0s 1 slideInFromLeft;
 }
 
 h1 span {
@@ -86,26 +133,48 @@ section.medium-widget {
     padding: 0;
 }
 
-nav {
+header nav {
     display: flex;
     padding: 20vw 0 0;
+}
+
+footer nav {
+    padding-bottom: 2.5vw;
+}
+
+footer > * {
+    opacity: 0.5;
+}
+
+footer:hover * {
+    opacity: 1;
 }
 
 nav ul {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
     width: 100%;
     padding: 0;
     margin: 0;
     flex-wrap: wrap;
 }
 
+
+header nav ul {
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+footer nav ul a {
+    padding-right: 1.25vw;
+}
+
+
 nav ul li {
     list-style-type: none;
 }
 
-nav a {
+header nav a {
     color: white;
     font-size: 1.66vw;
     opacity: 0.8;
@@ -115,7 +184,59 @@ nav a {
     padding: 5vw 0;
 }
 
-nav a:hover {
+header nav a:hover {
     opacity: 1;
     padding-left: 15%;
+}
+
+.yellow {
+    color: #FFF059;
+}
+
+.red {
+    color: #FF8269;
+}
+
+.green {
+    color: #47C368;
+}
+
+.purple {
+    color: #B05BB1
+}
+
+.blue {
+    color: #04B4E1
+}
+
+.blue-dark {
+    color: #5F74C5
+}
+
+.background-yellow {
+    background-color: #FFF059;
+}
+
+.background-red {
+    background-color: #FF8269;
+}
+
+.background-green {
+    background-color: #47C368;
+}
+
+.background-purple {
+    background-color: #B05BB1
+}
+
+.background-blue {
+    background-color: #04B4E1
+}
+
+.background-blue-dark {
+    background-color: #5F74C5
+}
+
+.background-light-gray {
+    background-color: rgb(224, 224, 224);
 }
