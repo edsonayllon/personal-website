@@ -1,3 +1,5 @@
+/* Global */
+
 body {
     font-family: 'Poppins', sans-serif;
     padding: 0;
@@ -17,10 +19,21 @@ body {
 }
 
 
-section {
-    padding: 12.5vw 10vw;
+nav ul {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    flex-wrap: wrap;
 }
 
+nav ul li {
+    list-style-type: none;
+}
+
+
+/* Header */
 
 header {
     display: flex;
@@ -32,6 +45,53 @@ header {
 header > * {
     animation: 1.125s ease 0s 1 slideInFromLeft;
 }
+
+header h1 span {
+    font-weight: 100;
+    opacity: 0.2;
+    font-size: 87.5%;
+}
+
+header h1 {
+    font-weight: 900;
+    font-size: 6.15vw;
+    margin: 0;
+}
+
+header h2 {
+    font-weight: 100;
+    font-size: 1.66vw;
+    padding-bottom: 1.25%;
+    margin: 0;
+}
+
+header nav {
+    display: flex;
+    padding: 20vw 0 0;
+}
+
+header nav ul {
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+header nav a {
+    color: white;
+    font-size: 1.66vw;
+    opacity: 0.8;
+    transition: 0.2s;
+    text-decoration: none;
+    border-left: 2.5px solid white;
+    padding: 5vw 0;
+}
+
+header nav a:hover {
+    opacity: 1;
+    padding-left: 15%;
+}
+
+
+/* Footer */
 
 footer {
     padding: 20vh 10vw 2.5vw;
@@ -58,6 +118,29 @@ footer.light-section small {
     color: rgb(0, 0, 0, 0.25);;
 }
 
+footer nav {
+    padding-bottom: 2.5vw;
+}
+
+footer > * {
+    opacity: 0.5;
+}
+
+footer:hover * {
+    opacity: 1;
+}
+
+footer nav ul a {
+    padding-right: 1.25vw;
+}
+
+
+/* Sections and Elements */
+
+section {
+    padding: 12.5vw 10vw;
+}
+
 section .grid {
     display: flex;
     flex-direction: row;
@@ -68,6 +151,31 @@ section .grid {
 section a {
     text-decoration: none;
     font-weight: 900;
+}
+
+section h2 {
+    font-size: 3vw;
+    margin-bottom: 5vw;
+}
+
+
+div.calendar {
+    border: none;
+    margin: 0;
+}
+
+div.calendar div {
+    border: none;
+}
+
+
+.dark-section .contrib-number {
+    color: rgb(255, 255, 255, 0.625);
+}
+
+section.medium-widget {
+    margin: 0;
+    padding: 0;
 }
 
 .dark-section .medium-widget-article__title {
@@ -81,18 +189,8 @@ section a {
 
 
 
-div.calendar {
-    border: none;
-    margin: 0;
-}
+/* Styling */
 
-div.calendar div {
-    border: none;
-}
-
-.dark-section .contrib-number {
-    color: rgb(255, 255, 255, 0.625);
-}
 
 .light-section {
     background-color: white;
@@ -102,92 +200,6 @@ div.calendar div {
 .dark-section {
     background-color: black;
     color: white;
-}
-
-h1 span {
-    font-weight: 100;
-    opacity: 0.2;
-    font-size: 87.5%;
-}
-
-header h1 {
-    font-weight: 900;
-    font-size: 6.15vw;
-    margin: 0;
-}
-
-header h2 {
-    font-weight: 100;
-    font-size: 1.66vw;
-    padding-bottom: 1.25%;
-    margin: 0;
-}
-
-section h2 {
-    font-size: 3vw;
-    margin-bottom: 5vw;
-}
-
-
-section.medium-widget {
-    margin: 0;
-    padding: 0;
-}
-
-header nav {
-    display: flex;
-    padding: 20vw 0 0;
-}
-
-footer nav {
-    padding-bottom: 2.5vw;
-}
-
-footer > * {
-    opacity: 0.5;
-}
-
-footer:hover * {
-    opacity: 1;
-}
-
-nav ul {
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-    padding: 0;
-    margin: 0;
-    flex-wrap: wrap;
-}
-
-
-header nav ul {
-    justify-content: space-between;
-    flex-wrap: wrap;
-}
-
-footer nav ul a {
-    padding-right: 1.25vw;
-}
-
-
-nav ul li {
-    list-style-type: none;
-}
-
-header nav a {
-    color: white;
-    font-size: 1.66vw;
-    opacity: 0.8;
-    transition: 0.2s;
-    text-decoration: none;
-    border-left: 2.5px solid white;
-    padding: 5vw 0;
-}
-
-header nav a:hover {
-    opacity: 1;
-    padding-left: 15%;
 }
 
 .yellow {
