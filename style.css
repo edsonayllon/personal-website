@@ -82,12 +82,17 @@ header nav a {
     transition: 0.2s;
     text-decoration: none;
     border-left: 2.5px solid white;
-    padding: 5vw 0;
+    padding-top: 5vw;
+    padding-bottom: 5vw;
+    padding-right: 1.875vw;
+    display: flex;
+    flex-grow: 1;
 }
 
 header nav a:hover {
     opacity: 1;
-    padding-left: 15%;
+    padding-left: 1.875vw;
+    padding-right: 0;
 }
 
 
@@ -139,6 +144,7 @@ footer nav ul a {
 
 section {
     padding: 12.5vw 10vw;
+    transition: 0.2s;
 }
 
 section .grid {
@@ -176,6 +182,14 @@ div.calendar div {
 section.medium-widget {
     margin: 0;
     padding: 0;
+}
+
+.medium-widget-article__row {
+    flex-wrap: wrap;
+}
+
+.medium-widget-article__item {
+    min-width: 200px;
 }
 
 .dark-section .medium-widget-article__title {
@@ -252,4 +266,68 @@ section.medium-widget {
 
 .background-light-gray {
     background-color: rgb(224, 224, 224);
+}
+
+@media only screen and (max-width: 600px) {
+    header {
+        padding: 25vh 10vw 30vw;
+    }
+
+    header h1 {
+        font-size: 8vw;
+    }
+
+    header h2 {
+        font-size: 3.125vw;
+        padding-bottom: 7.5vw;
+        display:none;
+    }
+
+    header nav {
+        padding: 20vw 0 0;
+    }
+
+    header nav a {
+        font-size: 5vw;
+        opacity: 1;
+        transition: 0.2s;
+        padding: 5vw 2.5vw;
+        width: 25vw;
+        margin-bottom: 2.5vw;
+    }
+
+    header nav a:hover {
+        padding: 5vw 2.5vw;
+    }
+
+    section h2 {
+        font-size: 6.25vw;
+        margin-bottom: 5vw;
+    }    
+
+    div.calendar {
+        width: 100%;
+    }
+
+    svg.js-calendar-graph-svg {
+
+        left: 0px;
+        height: auto;
+        overflow: hidden;
+    }
+
+    div.calendar-graph {
+        height: 75px;
+        transform: scale(0.4);
+        transform-origin: 0 0 0;
+    }
+    
+    footer {
+        padding: 10vh 10vw 37.5vw;
+        transition: 1s;
+    }
+
+    footer nav ul a {
+        padding-right: 2.5vw;
+    }
 }
