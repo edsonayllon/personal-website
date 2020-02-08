@@ -1,19 +1,22 @@
 ---
 author: Edson Ayllon
-category: project
+category: personal project
 tags: 
 - social media
 - resume
+status: complete
 twitter: https://twitter.com/relativeread
 ---
 
-#### `Proj XX-2020`
+## Project 4-2019
 
 # Personal Website
 
 Personal website for links to social media, possibly for use as a resume in the future. 
 
-## Preview
+Live at http://edsonayllon.com.
+
+## 1. Preview
 
 Viewable at: [`arweave/KXPpDGBo`](https://arweave.net/KXPpDGBoLz675JZBCKO60D6sxyBfpVlrUcJRrHDQ7Gk) | [`ipfs/QmNqkG4rh`](https://ipfs.io/ipfs/QmNqkG4rhT1kP5SQ3C1V9Jah5xaUg4VoBu23eeYVA4ihj7)
 
