@@ -1,7 +1,7 @@
 /* Global */
 
 body {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'IBM Plex Sans', sans-serif;
     padding: 0;
     margin: 0;
     background-color: black;
@@ -58,14 +58,14 @@ header h1 span {
 
 header h1 {
     font-weight: 900;
-    font-size: 6.15vw;
+    font-size: 5.625vw;
     margin: 0;
 }
 
 header h2 {
     font-weight: 100;
     font-size: 1.66vw;
-    padding-bottom: 1.25%;
+    padding-bottom: 2.92vw;
     margin: 0;
 }
 
@@ -84,7 +84,7 @@ header nav a {
     font-size: 1.66vw;
     opacity: 0.8;
     text-decoration: none;
-    border-left: 2.5px solid white;
+    border-left: 1.5px solid white;
     padding-top: 4.375vw;
     padding-bottom: 4.375vw;
     padding-right: 0.25vw;
@@ -103,7 +103,7 @@ header nav a:hover {
 /* Footer */
 
 footer {
-    padding: 20vh 10vw 2.5vw;
+    padding: 17.5vw 10vw 2.5vw;
 }
 
 footer.dark-section small {
@@ -146,7 +146,7 @@ footer nav ul a {
 /* Sections and Elements */
 
 section {
-    padding: 12.5vw 10vw;
+    padding: 16.25vw 10vw;
     transition: 0.2s;
 }
 
@@ -193,6 +193,7 @@ section.medium-widget {
 
 .medium-widget-article__item {
     min-width: 200px;
+    margin-bottom: 1.125vw;
 }
 
 .dark-section .medium-widget-article__title {
@@ -201,10 +202,12 @@ section.medium-widget {
 
 
 .dark-section .medium-widget-article__description, .dark-section .medium-widget-article__date {
-    color: rgb(255, 255, 255, 0.5);
+    color: rgb(255, 255, 255, 0.625);
 }
 
-
+a.medium-widget-article__title {
+    margin-top: 15px;
+}
 
 /* Styling */
 
@@ -271,13 +274,31 @@ section.medium-widget {
     background-color: rgb(224, 224, 224);
 }
 
+@media only screen and (max-width: 820px) {
+    div.calendar {
+        width: 100%;
+    }
+
+    svg.js-calendar-graph-svg {
+        left: 0px;
+        height: auto;
+        overflow: hidden;
+    }
+
+    div.calendar-graph {
+        height: 90px;
+        transform: scale(0.75);
+        transform-origin: 0 0 0;
+    }
+}
+
 @media only screen and (max-width: 600px) {
     header {
         padding: 25vh 10vw 30vw;
     }
 
     header h1 {
-        font-size: 8vw;
+        font-size: 10vw;
     }
 
     header h2 {
@@ -325,7 +346,7 @@ section.medium-widget {
     }
     
     footer {
-        padding: 10vh 10vw 37.5vw;
+        padding: 10vh 10vw 35vw;
         transition: 1s;
     }
 
