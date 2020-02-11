@@ -618,12 +618,12 @@ h2.f4.text-normal.mb-3 {
     </script>
     <script src="https://cdn.jsdelivr.net/npm/ipfs/dist/index.min.js"></script>
     <script>
-      const node = new window.Ipfs()
-  
-      node.on('ready', () => {
-        // Ready to use!
-        // See https://github.com/ipfs/js-ipfs#core-api
-      })
-    </script>
+        async function main () {
+          const node = await window.Ipfs.create()
+          // Ready to use!
+          // See https://github.com/ipfs/js-ipfs#core-api
+        }
+        main()
+        </script>
 </body>
 </html>
