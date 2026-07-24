@@ -1,14 +1,156 @@
 ---
-import '../styles/global.css';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Section from '../components/Section.astro';
+import MetricStat from '../components/MetricStat.astro';
+import CaseStudyCard from '../components/CaseStudyCard.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+import {
+  site,
+  socials,
+  resumePath,
+  metrics,
+  caseStudies,
+  professionalProducts,
+  personalProducts,
+  experience,
+} from '../content/site';
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: site.name,
+  jobTitle: 'Product Director',
+  description: site.description,
+  email: `mailto:${site.email}`,
+  url: site.url,
+  sameAs: socials.map((s) => s.href),
+  alumniOf: {
+    '@type': 'CollegeOrUniversity',
+    name: 'The Pennsylvania State University',
+  },
+};
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Edson Ayllon</title>
-  </head>
-  <body>
-    <h1 class="font-display text-5xl text-white">Edson Ayllon</h1>
-  </body>
-</html>
+<BaseLayout title={site.title} description={site.description}>
+  <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} slot="head" />
+
+  <!-- Hero -->
+  <section class="mx-auto max-w-5xl px-6 pb-20 pt-20 md:pb-28 md:pt-32">
+    <p class="text-xs font-medium uppercase tracking-[0.2em] text-rose-300">
+      Edson Ayllon · Product Director
+    </p>
+    <h1 class="mt-5 max-w-4xl font-display text-5xl leading-[1.05] text-white md:text-7xl">
+      I build financial products people trust with real money.
+    </h1>
+    <p class="mt-7 max-w-2xl text-lg leading-relaxed text-slate-400">
+      Product leader with an engineering edge. Over five years shipping consumer financial
+      products end to end — strategy, pricing, launches, and growth — most recently leading a
+      cross-functional team of 10 as Product Director at Chamber. I started as a frontend
+      engineer, and I still ship.
+    </p>
+    <div class="mt-9 flex flex-wrap items-center gap-4">
+      <a
+        href="#work"
+        class="rounded-full bg-rose-400 px-6 py-2.5 text-sm font-semibold text-slate-950 transition-colors hover:bg-rose-300"
+      >
+        View my work
+      </a>
+      <a
+        href={resumePath}
+        class="rounded-full border border-slate-700 px-6 py-2.5 text-sm font-medium text-slate-200 transition-colors hover:border-slate-500 hover:text-white"
+      >
+        Download resume
+      </a>
+    </div>
+    <ul class="mt-10 flex flex-wrap gap-x-6 gap-y-2 text-sm">
+      {
+        socials.map((s) => (
+          <li>
+            <a href={s.href} rel="me noopener" target="_blank" class="text-slate-500 hover:text-slate-300">
+              {s.label}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </section>
+
+  <!-- Metrics band -->
+  <section aria-label="Career metrics" class="border-t border-slate-800/70">
+    <div class="mx-auto grid max-w-5xl grid-cols-1 gap-10 px-6 py-16 sm:grid-cols-2 lg:grid-cols-4">
+      {metrics.map((m) => <MetricStat value={m.value} label={m.label} context={m.context} />)}
+    </div>
+  </section>
+
+  <!-- Case studies -->
+  <Section id="work" eyebrow="Selected work" title="Case studies">
+    <div class="grid grid-cols-1 gap-6 md:grid-cols-2">
+      {caseStudies.map((study) => <CaseStudyCard study={study} />)}
+    </div>
+  </Section>
+
+  <!-- Live products -->
+  <Section id="projects" eyebrow="Proof of shipping" title="Live products">
+    <h3 class="text-sm font-medium uppercase tracking-wider text-slate-500">
+      As product leader
+    </h3>
+    <div class="mt-5 grid grid-cols-1 gap-6 md:grid-cols-3">
+      {
+        professionalProducts.map((p) => (
+          <ProjectCard
+            name={p.name}
+            href={p.href}
+            domain={p.domain}
+            description={p.description}
+          />
+        ))
+      }
+    </div>
+    <h3 class="mt-14 text-sm font-medium uppercase tracking-wider text-slate-500">
+      As independent builder — three AI apps, two weeks, 2026
+    </h3>
+    <div class="mt-5 grid grid-cols-1 gap-6 md:grid-cols-3">
+      {
+        personalProducts.map((p) => (
+          <ProjectCard
+            name={p.name}
+            href={p.href}
+            domain={p.domain}
+            description={p.description}
+            note={p.note}
+            icon={p.icon}
+            appStore={'appStore' in p ? p.appStore : undefined}
+          />
+        ))
+      }
+    </div>
+    <p class="mt-6 text-sm text-slate-500">
+      How and why I built these three →
+      <a
+        href="/work/ai-apps"
+        class="text-rose-400 underline decoration-rose-400/40 underline-offset-4 hover:text-rose-300"
+      >
+        read the case study</a
+      >.
+    </p>
+  </Section>
+
+  <!-- Experience -->
+  <Section id="experience" eyebrow="Background" title="Experience">
+    <ol class="space-y-10 border-l border-slate-800 pl-6 md:pl-8">
+      {
+        experience.map((job) => (
+          <li class="relative">
+            <span class="absolute -left-[1.85rem] top-2 size-2 rounded-full bg-rose-400 md:-left-[2.35rem]" aria-hidden="true" />
+            <div class="flex flex-wrap items-baseline gap-x-3 gap-y-1">
+              <h3 class="font-medium text-white">{job.role}</h3>
+              <span class="text-sm text-slate-500">{job.company}</span>
+            </div>
+            <p class="mt-1 text-sm text-slate-500 tabular-nums">{job.period}</p>
+            {job.summary && <p class="mt-2 max-w-2xl text-sm leading-relaxed text-slate-400">{job.summary}</p>}
+          </li>
+        ))
+      }
+    </ol>
+  </Section>
+</BaseLayout>
