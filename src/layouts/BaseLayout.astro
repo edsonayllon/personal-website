@@ -12,7 +12,10 @@ interface Props {
 }
 
 const { title, description, ogImage = site.ogImage, ogType = 'website' } = Astro.props;
-const canonical = new URL(Astro.url.pathname, Astro.site);
+// build.format 'file' makes pathnames end in .html at build time; canonical
+// URLs must match the clean URLs Firebase serves (and the sitemap emits).
+const cleanPath = Astro.url.pathname.replace(/\.html$/, '').replace(/^\/index$/, '/');
+const canonical = new URL(cleanPath, Astro.site);
 const ogImageUrl = new URL(ogImage, Astro.site);
 ---
 
