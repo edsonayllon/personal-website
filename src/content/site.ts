@@ -82,7 +82,7 @@ export const caseStudies: CaseStudy[] = [
   {
     slug: 'ai-apps',
     eyebrow: 'Independent · 2026',
-    title: 'Three AI products, two weeks, three AI architectures',
+    title: 'Three AI products, three different AI architectures',
     outcome:
       'Shipped three complete consumer apps — cloud LLM, on-device AI, and cross-platform — all live, one on the App Store.',
     metric: '3 live products · 1 App Store release',
