@@ -1,0 +1,113 @@
+---
+import CaseStudyLayout from '../../layouts/CaseStudyLayout.astro';
+---
+
+<CaseStudyLayout
+  slug="ai-apps"
+  title="Three AI products, two weeks, three AI architectures"
+  description="Cleared, IronProof, and Grava — three complete consumer apps shipped solo in two weeks, each a deliberate bet on a different AI product architecture. All live; one on the App Store."
+  role="Independent — design, product, engineering"
+  timeframe="2026"
+  metrics={[
+    { value: '3', label: 'Complete products, all live' },
+    { value: '2', label: 'Weeks from zero to shipped' },
+    { value: '1', label: 'App Store release' },
+  ]}
+>
+  <h2>Why</h2>
+  <p>
+    AI changes what one person can ship — and it changes what "good AI product judgment" means.
+    Reading about that is one thing. To pressure-test it, I gave myself two weeks to ship three
+    complete consumer products, each built on a <strong>deliberately different AI
+    architecture</strong>: cloud LLM, fully on-device AI, and no model at all. Every one is
+    live today with its own brand, website, and users' data to protect.
+  </p>
+
+  <h2>Cleared — an opinionated AI to-do app</h2>
+  <p>
+    <a href="https://clearedfirst.com" target="_blank" rel="noopener">clearedfirst.com</a> ·
+    <em>"Clear what matters. First."</em>
+  </p>
+  <p>
+    Most to-do apps are lists; Cleared has an opinion. Say a goal and AI plans the steps. Your
+    tasks then compete — you judge them head-to-head in a bracket, or AI referees — producing a
+    ranked tier list with one task spotlighted as <em>clear next</em>. Work in order until the
+    app says <strong>"All clear."</strong>
+  </p>
+  <ul>
+    <li>
+      <strong>The AI bet — cloud LLM economics as a product constraint.</strong> The entire
+      ranking runs in a single cost-optimized Gemini request, and app attestation ensures only
+      the real app can spend model quota. Latency and unit cost were designed, not discovered.
+    </li>
+    <li>
+      React 19, TypeScript, Tailwind, Firebase (auth, sync, App Check), Gemini — shipped as a
+      PWA and an iOS app via Capacitor.
+    </li>
+  </ul>
+
+  <h2>IronProof — proof over motivation</h2>
+  <p>
+    <a href="https://ironproof.org" target="_blank" rel="noopener">ironproof.org</a> ·
+    <em>"The scale lies. Proof doesn't."</em> ·
+    <a
+      href="https://apps.apple.com/us/app/ironproof-photos/id6790628450"
+      target="_blank"
+      rel="noopener">live on the App Store</a
+    >
+  </p>
+  <p>
+    A fitness progress tracker built on a simple insight: photos reveal what scale weight
+    can't. IronProof turns progress photos into a timeline of transformation — weight and
+    measurements overlaid on every shot, dates read automatically from photo metadata, synced
+    across devices.
+  </p>
+  <ul>
+    <li>
+      <strong>The bet — breadth of shipping.</strong> One codebase runs on the web, iOS,
+      Android, and desktop. It went through Apple's review and is live on the App Store.
+    </li>
+    <li>
+      The hard parts were unglamorous product engineering: HEIC photo decoding, EXIF date
+      extraction, offline-first storage with cross-device sync.
+    </li>
+  </ul>
+
+  <h2>Grava — calorie counting, without the counting</h2>
+  <p>
+    <a href="https://gravacal.com" target="_blank" rel="noopener">gravacal.com</a> ·
+    <em>"Snap. Confirm. Eat."</em>
+  </p>
+  <p>
+    A native iPhone calorie tracker that removes the logging that kills every diet app:
+    photograph a meal, a menu, a nutrition label, or a delivery screenshot, and AI estimates
+    calories and macros. Estimates come back as honest <strong>ranges</strong>, and the app
+    biases toward the top, middle, or bottom of the range depending on whether you're cutting,
+    maintaining, or bulking — protecting the user's goal instead of faking precision.
+  </p>
+  <ul>
+    <li>
+      <strong>The AI bet — fully on-device.</strong> Built in SwiftUI on Apple Intelligence:
+      the Vision framework for food recognition and OCR, and the on-device foundation model for
+      estimation. Nothing you photograph ever leaves the device — privacy as the differentiator.
+    </li>
+  </ul>
+
+  <h2>What two weeks taught me</h2>
+  <ul>
+    <li>
+      <strong>Architecture is a product decision.</strong> Cloud models buy capability and cost
+      you unit economics; on-device models buy privacy and cost you capability. Choosing per
+      product — not per hype cycle — is the actual skill.
+    </li>
+    <li>
+      <strong>AI compresses build time, not judgment time.</strong> The models wrote a lot of
+      code. Deciding what each product refuses to do — Cleared's single-request budget, Grava's
+      ranges instead of false precision — was still the work.
+    </li>
+    <li>
+      <strong>Shipping is the credential.</strong> Brands, websites, App Store review, auth,
+      sync, data protection — the last 20% is where product managers earn the title.
+    </li>
+  </ul>
+</CaseStudyLayout>

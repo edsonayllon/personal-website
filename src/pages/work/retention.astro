@@ -1,0 +1,76 @@
+---
+import CaseStudyLayout from '../../layouts/CaseStudyLayout.astro';
+---
+
+<CaseStudyLayout
+  slug="retention"
+  title="From 600 to 5,700 weekly returning users"
+  description="How gamification, loss aversion, and incentive design turned a deposit product into a weekly habit — an 850% increase in returning users."
+  role="Product Director, Chamber"
+  timeframe="2024 – 2026"
+  metrics={[
+    { value: '600', label: 'Weekly returning users, before' },
+    { value: '5,700', label: 'Weekly returning users, after' },
+    { value: '850%', label: 'Increase' },
+  ]}
+>
+  <h2>Context</h2>
+  <p>
+    Chamber's core product — automated investment vaults — had a structural retention problem
+    hiding in its own value proposition. The product worked best when users did nothing:
+    deposit, let the strategies run, come back eventually. Acquisition was healthy, deposits
+    were growing, and yet only around <strong>600 users returned in a given week</strong>.
+  </p>
+
+  <h2>Problem</h2>
+  <p>
+    A financial product users never visit is a product users eventually leave. Withdrawal
+    decisions happen in the app; so do deposit top-ups, new vault discovery, and referrals.
+    Every one of those depends on a return visit. We needed users to come back weekly —
+    without resorting to notification spam or manufactured urgency that erodes trust in a
+    product holding people's money.
+  </p>
+
+  <h2>Approach</h2>
+  <h3>Design for the psychology users already have</h3>
+  <p>
+    We grounded the work in behavioral economics rather than novelty. People feel losses
+    roughly twice as strongly as gains, and progress they can see is progress they protect.
+    So we built features where returning was the natural way to protect and compound something
+    the user valued — <strong>loss-aversion mechanics, gamified progression, and incentives</strong>
+    tied to consistent engagement.
+  </p>
+  <h3>Make the metric the product's job</h3>
+  <p>
+    Weekly returning users became a first-class product metric with an explicit target, not a
+    dashboard curiosity. Features shipped, were measured against it, and were iterated or cut.
+    The discipline mattered as much as any individual mechanic: each release taught us which
+    loops actually changed weekly behavior and which just looked engaging in a design review.
+  </p>
+  <h3>Respect the money</h3>
+  <p>
+    Every mechanic had a hard constraint: it could never push a user toward a worse financial
+    decision. Gamification in a financial product is a sharp tool — we used it to reward
+    showing up and staying consistent, never to reward risk.
+  </p>
+
+  <h2>Outcome</h2>
+  <ul>
+    <li>
+      Weekly returning users grew from <strong>600 to 5,700</strong> — an
+      <strong>850% increase</strong>.
+    </li>
+    <li>
+      The habit loop compounded the business: more weekly visits meant more top-ups, more vault
+      discovery, and a larger base of users who saw each new launch.
+    </li>
+  </ul>
+
+  <h2>What this shows</h2>
+  <p>
+    Retention isn't a growth-hack layered onto a product; it's a design constraint of the
+    product itself. The 850% didn't come from one clever feature — it came from picking the
+    right behavioral principles, measuring one metric honestly, and iterating until the
+    product gave users a reason to return that was genuinely in their interest.
+  </p>
+</CaseStudyLayout>
