@@ -1,0 +1,84 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import MetricStat from '../components/MetricStat.astro';
+import { caseStudies, site, resumePath } from '../content/site';
+
+interface Props {
+  slug: string;
+  title: string;
+  description: string;
+  role: string;
+  timeframe: string;
+  metrics: { value: string; label: string }[];
+}
+
+const { slug, title, description, role, timeframe, metrics } = Astro.props;
+
+const index = caseStudies.findIndex((s) => s.slug === slug);
+const study = caseStudies[index];
+const prev = index > 0 ? caseStudies[index - 1] : undefined;
+const next = index < caseStudies.length - 1 ? caseStudies[index + 1] : undefined;
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: title,
+  description,
+  url: new URL(Astro.url.pathname, Astro.site).href,
+  author: {
+    '@type': 'Person',
+    name: site.name,
+    url: site.url,
+  },
+};
+---
+
+<BaseLayout title={`${title} — ${site.name}`} description={description} ogType="article">
+  <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} slot="head" />
+
+  <article>
+    <header class="mx-auto max-w-5xl px-6 pb-4 pt-16 md:pt-24">
+      <p class="text-xs font-medium uppercase tracking-[0.2em] text-rose-300">
+        Case study{study ? ` · ${study.eyebrow}` : ''}
+      </p>
+      <h1 class="mt-4 max-w-3xl font-display text-4xl leading-tight text-white md:text-5xl">
+        {title}
+      </h1>
+      <p class="mt-5 text-slate-400">{role} · {timeframe}</p>
+      <div class="mt-12 grid grid-cols-1 gap-8 border-y border-slate-800/70 py-10 sm:grid-cols-3">
+        {metrics.map((m) => <MetricStat value={m.value} label={m.label} size="md" />)}
+      </div>
+    </header>
+
+    <div class="case-prose mx-auto max-w-2xl px-6 pb-20 pt-8">
+      <slot />
+    </div>
+  </article>
+
+  <nav aria-label="More case studies" class="border-t border-slate-800/70">
+    <div class="mx-auto flex max-w-5xl flex-col gap-6 px-6 py-12 sm:flex-row sm:items-center sm:justify-between">
+      <div class="flex flex-col gap-2 text-sm">
+        {
+          prev && (
+            <a href={`/work/${prev.slug}`} class="text-slate-300 hover:text-white">
+              ← {prev.title}
+            </a>
+          )
+        }
+        {
+          next && (
+            <a href={`/work/${next.slug}`} class="text-slate-300 hover:text-white">
+              {next.title} →
+            </a>
+          )
+        }
+      </div>
+      <a
+        href={resumePath}
+        class="shrink-0 rounded-full border border-rose-400/40 px-5 py-2 text-sm font-medium text-rose-300 transition-colors hover:border-rose-300 hover:text-rose-200"
+      >
+        Download resume
+      </a>
+    </div>
+  </nav>
+</BaseLayout>

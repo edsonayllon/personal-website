@@ -1,0 +1,18 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { site } from '../content/site';
+---
+
+<BaseLayout title={`Page not found — ${site.name}`} description="This page doesn't exist.">
+  <div class="mx-auto flex max-w-5xl flex-col items-start px-6 py-32">
+    <p class="text-xs font-medium uppercase tracking-[0.2em] text-rose-300">404</p>
+    <h1 class="mt-4 font-display text-5xl text-white">This page doesn't exist.</h1>
+    <p class="mt-4 text-slate-400">The work, however, does.</p>
+    <a
+      href="/"
+      class="mt-8 rounded-full border border-rose-400/40 px-5 py-2 text-sm font-medium text-rose-300 transition-colors hover:border-rose-300 hover:text-rose-200"
+    >
+      Back home
+    </a>
+  </div>
+</BaseLayout>

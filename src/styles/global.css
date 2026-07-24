@@ -24,3 +24,29 @@ body {
 ::selection {
   @apply bg-rose-400/30 text-white;
 }
+
+/* Long-form typography for case-study bodies (hand-authored markup). */
+.case-prose {
+  @apply leading-relaxed text-slate-300;
+}
+.case-prose h2 {
+  @apply mt-14 font-display text-2xl text-white;
+}
+.case-prose h3 {
+  @apply mt-9 text-lg font-semibold text-white;
+}
+.case-prose p {
+  @apply mt-5;
+}
+.case-prose ul {
+  @apply mt-5 list-disc space-y-2 pl-5 marker:text-rose-400;
+}
+.case-prose strong {
+  @apply font-semibold text-white;
+}
+.case-prose a {
+  @apply text-rose-400 underline decoration-rose-400/40 underline-offset-4 hover:text-rose-300;
+}
+.case-prose blockquote {
+  @apply mt-5 border-l-2 border-rose-400/60 pl-5 text-slate-400;
+}

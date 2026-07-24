@@ -1,0 +1,41 @@
+---
+interface Props {
+  name: string;
+  href: string;
+  domain: string;
+  description: string;
+  note?: string;
+  icon?: string;
+  appStore?: string;
+}
+
+const { name, href, domain, description, note, icon, appStore } = Astro.props;
+---
+
+<div class="flex flex-col rounded-lg border border-slate-800 p-6">
+  <div class="flex items-center gap-3">
+    {icon && <img src={icon} alt="" width="40" height="40" class="size-10 rounded-lg" loading="lazy" />}
+    <div>
+      <h3 class="font-medium text-white">{name}</h3>
+      {note && <p class="text-xs text-rose-300">{note}</p>}
+    </div>
+  </div>
+  <p class="mt-4 text-sm leading-relaxed text-slate-400">{description}</p>
+  <div class="mt-auto flex flex-wrap items-center gap-x-5 gap-y-2 pt-5 text-sm">
+    <a
+      href={href}
+      target="_blank"
+      rel="noopener"
+      class="text-rose-400 underline decoration-rose-400/40 underline-offset-4 hover:text-rose-300"
+    >
+      {domain} ↗
+    </a>
+    {
+      appStore && (
+        <a href={appStore} target="_blank" rel="noopener" class="shrink-0">
+          <img src="/projects/app-store-badge.svg" alt={`Download ${name} on the App Store`} height="36" class="h-9 w-auto" loading="lazy" />
+        </a>
+      )
+    }
+  </div>
+</div>
