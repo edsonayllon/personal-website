@@ -57,7 +57,7 @@ export interface CaseStudy {
 export const caseStudies: CaseStudy[] = [
   {
     slug: 'chamber',
-    eyebrow: 'Chamber · Product Director',
+    eyebrow: 'Chamber · Senior Product Manager',
     title: 'Repositioning a four-year-old investment platform for the AI era',
     outcome:
       'Led the rebrand from dHEDGE to Chamber and the pivot to AI-managed vaults — naming, positioning, launch, and pricing.',
@@ -145,7 +145,7 @@ export const personalProducts = [
 export const experience = [
   {
     company: 'Chamber (formerly dHEDGE)',
-    role: 'Product Director',
+    role: 'Senior Product Manager',
     period: 'Jan 2024 – Apr 2026',
     summary:
       'Led a cross-functional team of 10 engineers and designers. Product features attracted $125M+ in concurrent deposits; rebrand and AI-vaults pivot grew monthly visitors 73%; pricing strategy captured $3.4M in annualized revenue.',
@@ -155,7 +155,7 @@ export const experience = [
     role: 'Technical Product Manager',
     period: 'May 2021 – Dec 2023',
     summary:
-      'Owned the dHEDGE V2 launch on Polygon — $1M in capital in the first month, $6.5M over six months — and led the first release on Optimism ($300k in month one).',
+      'Owned the dHEDGE V2 launch on Polygon — $1M in capital in the first month, $6.5M over six months — and led the first release on Optimism ($300K in month one).',
   },
   {
     company: 'dHEDGE',
