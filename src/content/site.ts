@@ -84,7 +84,7 @@ export const caseStudies: CaseStudy[] = [
     eyebrow: 'Independent · 2026',
     title: 'Three AI products, three different AI architectures',
     outcome:
-      'Shipped three complete consumer apps — cloud LLM, on-device AI, and cross-platform — all live, one on the App Store.',
+      'Shipped three complete consumer apps — cloud LLM, hybrid cloud/on-device, and cross-platform — all live, one on the App Store.',
     metric: '3 live products · 1 App Store release',
   },
 ];
@@ -137,8 +137,8 @@ export const personalProducts = [
     domain: 'gravacal.com',
     icon: '/projects/grava-icon.png',
     description:
-      'AI calorie tracker for iPhone — photograph a meal, AI estimates the rest, fully on-device.',
-    note: 'On-device Apple Intelligence',
+      'AI calorie tracker for iPhone — photograph a meal, AI estimates calories and macros as honest ranges.',
+    note: 'Gemini · on-device fallback',
   },
 ] as const;
 

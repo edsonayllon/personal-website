@@ -19,7 +19,7 @@ import CaseStudyLayout from '../../layouts/CaseStudyLayout.astro';
     AI changes what one person can ship — and it changes what "good AI product judgment" means.
     Reading about that is one thing. To pressure-test it, I set out to ship three complete
     consumer products, each built on a <strong>deliberately different AI architecture</strong>:
-    cloud LLM, fully on-device AI, and no model at all. Every one is
+    cloud LLM, a cloud model with an on-device fallback, and no model at all. Every one is
     live today with its own brand, website, and users' data to protect.
   </p>
 
@@ -87,9 +87,12 @@ import CaseStudyLayout from '../../layouts/CaseStudyLayout.astro';
   </p>
   <ul>
     <li>
-      <strong>The AI bet — fully on-device.</strong> Built in SwiftUI on Apple Intelligence:
-      the Vision framework for food recognition and OCR, and the on-device foundation model for
-      estimation. Nothing you photograph ever leaves the device — privacy as the differentiator.
+      <strong>The AI bet — two models behind one estimator.</strong> Built in SwiftUI. Estimates
+      run on Gemini by default, because accuracy is what makes a calorie estimate worth trusting;
+      when the request fails, the quota is spent, or the phone is offline, the app falls back to
+      Apple Intelligence on device — the Vision framework for food recognition and OCR, plus the
+      on-device foundation model, calibrated with serving-size anchors the smaller model needs.
+      The UI names which model answered, so a degraded estimate is never passed off as the best one.
     </li>
   </ul>
 
@@ -97,8 +100,11 @@ import CaseStudyLayout from '../../layouts/CaseStudyLayout.astro';
   <ul>
     <li>
       <strong>Architecture is a product decision.</strong> Cloud models buy capability and cost
-      you unit economics; on-device models buy privacy and cost you capability. Choosing per
-      product — not per hype cycle — is the actual skill.
+      you unit economics; on-device models buy privacy and offline reach and cost you accuracy.
+      Grava started fully on-device and moved to cloud-first once testing showed the small model's
+      calorie estimates weren't good enough to trust — keeping it as the fallback rather than
+      shipping "works offline" as a promise the accuracy couldn't cover. Choosing per product —
+      and revising the choice when the evidence changes — is the actual skill.
     </li>
     <li>
       <strong>AI compresses build time, not judgment time.</strong> The models wrote a lot of
