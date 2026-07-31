@@ -119,7 +119,7 @@ export const personalProducts = [
     icon: '/projects/cleared-icon.png',
     description:
       'AI to-do app that ranks your list so you always know the one thing to do next.',
-    note: 'Cloud LLM · Gemini',
+    note: 'Gemini · MCP for Claude',
   },
   {
     name: 'IronProof',

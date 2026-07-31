@@ -41,8 +41,16 @@ import CaseStudyLayout from '../../layouts/CaseStudyLayout.astro';
       the real app can spend model quota. Latency and unit cost were designed, not discovered.
     </li>
     <li>
-      React 19, TypeScript, Tailwind, Firebase (auth, sync, App Check), Gemini — shipped as a
-      PWA and an iOS app via Capacitor.
+      <strong>The agent bet — the app is also a tool surface.</strong> Cleared ships a remote
+      MCP server, so Claude can read the list in priority order, file tasks into tiers, and run
+      the same prioritization the app runs. It signs in with OAuth 2.1 against the app's own
+      accounts, and writes go through the same rules the UI does — so anything Claude does is
+      undoable in Cleared. Connecting is one URL and one approval: no API keys, nothing to
+      install.
+    </li>
+    <li>
+      React 19, TypeScript, Tailwind, Firebase (auth, sync, App Check), Gemini, and a remote MCP
+      server on Cloud Functions — shipped as a PWA and an iOS app via Capacitor.
     </li>
   </ul>
 
