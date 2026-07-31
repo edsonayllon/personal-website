@@ -84,8 +84,8 @@ export const caseStudies: CaseStudy[] = [
     eyebrow: 'Independent · 2026',
     title: 'Three AI products, three different AI architectures',
     outcome:
-      'Shipped three complete consumer apps — cloud LLM, hybrid cloud/on-device, and cross-platform — all live, one on the App Store.',
-    metric: '3 live products · 1 App Store release',
+      'Shipped three complete consumer apps — cloud LLM, hybrid cloud/on-device, and cross-platform — all live, two on the App Store.',
+    metric: '3 live products · 2 App Store releases',
   },
 ];
 
@@ -128,7 +128,7 @@ export const personalProducts = [
     icon: '/projects/ironproof-icon.png',
     description:
       'Turns progress photos into proof of transformation, synced across devices.',
-    note: 'Live on the App Store',
+    note: 'Cross-platform · no model',
     appStore: 'https://apps.apple.com/us/app/ironproof-photos/id6790628450',
   },
   {
@@ -139,6 +139,7 @@ export const personalProducts = [
     description:
       'AI calorie tracker for iPhone — photograph a meal, AI estimates calories and macros as honest ranges.',
     note: 'Gemini · on-device fallback',
+    appStore: 'https://apps.apple.com/us/app/grava/id6790959541',
   },
 ] as const;
 
