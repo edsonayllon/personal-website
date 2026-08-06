@@ -6,7 +6,7 @@ export const site = {
   name: 'Edson Ayllon',
   title: 'Edson Ayllon — Product Leader, Consumer Financial Products',
   description:
-    'Product leader with an engineering edge. 7+ years shipping consumer financial products — launches that attracted $125M+ in user deposits and $3.4M in annualized revenue.',
+    'Product leader with an engineering edge. 7 years across product and engineering, the last five shipping consumer financial products — launches that attracted $125M+ in user deposits and $3.4M in annualized revenue.',
   url: 'https://edsonayllon.com',
   email: 'eayllon1@gmail.com',
   twitterHandle: '@relativeread',
