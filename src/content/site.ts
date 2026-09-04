@@ -84,8 +84,8 @@ export const caseStudies: CaseStudy[] = [
     eyebrow: 'Independent · 2026',
     title: 'Three AI products, three different AI architectures',
     outcome:
-      'Shipped three complete consumer apps — cloud LLM, hybrid cloud/on-device, and cross-platform — all live, two on the App Store.',
-    metric: '3 live products · 2 App Store releases',
+      'Shipped three complete consumer apps — cloud LLM, hybrid cloud/on-device, and cross-platform — all live, all three on the App Store.',
+    metric: '3 live products · 3 App Store releases',
   },
 ];
 
@@ -120,6 +120,7 @@ export const personalProducts = [
     description:
       'AI to-do app that ranks your list so you always know the one thing to do next.',
     note: 'Gemini · MCP for Claude',
+    appStore: 'https://apps.apple.com/us/app/cleared-first/id6792591159',
   },
   {
     name: 'IronProof',
