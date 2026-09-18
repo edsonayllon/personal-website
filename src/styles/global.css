@@ -1,52 +1,140 @@
 @import 'tailwindcss';
+@import '@fontsource-variable/newsreader/standard.css';
+@import '@fontsource-variable/newsreader/standard-italic.css';
 @import '@fontsource-variable/inter';
-@import '@fontsource-variable/fraunces';
 
+/*
+ * Design tokens. Every color on the site is defined here and nowhere else.
+ * Palette: warm pearl paper, sea-ink type, sea-glass links, a trace of lavender.
+ */
 @theme {
+  --color-*: initial;
+
+  --color-pearl: oklch(97.5% 0.008 80);
+  --color-surface: oklch(99% 0.005 80);
+  --color-mist: oklch(95.5% 0.012 220);
+
+  --color-ink: oklch(27% 0.035 250);
+  --color-ink-soft: oklch(45% 0.03 250);
+  --color-ink-mute: oklch(54% 0.022 250);
+
+  --color-hairline: oklch(88% 0.012 230);
+  --color-hairline-strong: oklch(80% 0.015 230);
+
+  --color-seaglass: oklch(50% 0.06 195);
+  --color-seaglass-deep: oklch(42% 0.065 195);
+  --color-seaglass-soft: oklch(93% 0.025 195);
+  --color-seaglass-wash: oklch(96.5% 0.012 195);
+
+  --color-lavender: oklch(50% 0.08 295);
+  --color-lavender-soft: oklch(94% 0.025 295);
+  --color-lavender-wash: oklch(96% 0.015 295);
+
+  --font-serif: 'Newsreader Variable', 'Iowan Old Style', 'Palatino Linotype', Georgia, serif;
   --font-sans: 'Inter Variable', ui-sans-serif, system-ui, sans-serif;
-  --font-display: 'Fraunces Variable', ui-serif, Georgia, serif;
+  --font-display: var(--font-serif);
+
+  --text-eyebrow: 0.6875rem;
+  --text-eyebrow--line-height: 1rem;
+  --text-eyebrow--letter-spacing: 0.18em;
+  --text-lead: 1.25rem;
+  --text-lead--line-height: 1.55;
+  --text-prose: 1.125rem;
+  --text-prose--line-height: 1.65;
+  --text-display: 2.625rem;
+  --text-display--line-height: 1.05;
+  --text-display--letter-spacing: -0.01em;
+  --text-display-lg: 4.5rem;
+  --text-display-lg--line-height: 1.02;
+  --text-display-lg--letter-spacing: -0.015em;
+
+  --container-prose: 38rem;
 }
 
-html {
-  scroll-behavior: smooth;
-}
+@layer base {
+  *,
+  ::before,
+  ::after {
+    border-color: var(--color-hairline);
+  }
 
-@media (prefers-reduced-motion: reduce) {
   html {
-    scroll-behavior: auto;
+    scroll-behavior: smooth;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+
+  body {
+    @apply bg-pearl font-serif text-ink antialiased;
+    font-optical-sizing: auto;
+  }
+
+  ::selection {
+    @apply bg-lavender-soft text-ink;
+  }
+
+  :focus-visible {
+    @apply outline-2 outline-offset-2 outline-seaglass;
   }
 }
 
-body {
-  @apply bg-slate-950 font-sans text-slate-300 antialiased;
+/* Editorial pieces reused across pages. Change here, not in markup. */
+@utility eyebrow {
+  @apply font-sans text-eyebrow font-medium uppercase text-ink-soft;
 }
 
-::selection {
-  @apply bg-rose-400/30 text-white;
+@utility btn {
+  @apply inline-flex items-center rounded-xs px-5 py-2.5 font-sans text-sm font-medium transition-colors;
+}
+
+@utility btn-primary {
+  @apply bg-ink text-pearl hover:bg-seaglass-deep;
+}
+
+@utility btn-secondary {
+  @apply border border-hairline-strong text-ink hover:border-ink;
+}
+
+@utility link {
+  @apply text-seaglass underline decoration-seaglass/40 underline-offset-4 hover:text-seaglass-deep hover:decoration-seaglass;
+}
+
+/* A faint wash of lavender and sea-glass light behind the hero. Keep stops at 96%+ lightness. */
+@utility wash-hero {
+  background-image:
+    radial-gradient(ellipse 70% 60% at 18% 0%, var(--color-lavender-wash) 0%, transparent 70%),
+    radial-gradient(ellipse 60% 55% at 88% 12%, var(--color-seaglass-wash) 0%, transparent 70%);
 }
 
 /* Long-form typography for case-study bodies (hand-authored markup). */
 .case-prose {
-  @apply leading-relaxed text-slate-300;
+  @apply font-serif text-prose text-ink;
 }
 .case-prose h2 {
-  @apply mt-14 font-display text-2xl text-white;
+  @apply mt-16 font-serif text-3xl leading-[1.15] text-ink;
 }
 .case-prose h3 {
-  @apply mt-9 text-lg font-semibold text-white;
+  @apply mt-10 font-serif text-xl font-medium leading-snug text-ink;
 }
 .case-prose p {
   @apply mt-5;
 }
 .case-prose ul {
-  @apply mt-5 list-disc space-y-2 pl-5 marker:text-rose-400;
+  @apply mt-5 list-disc space-y-2 pl-5 marker:text-ink-mute;
 }
 .case-prose strong {
-  @apply font-semibold text-white;
+  @apply font-semibold text-ink;
+}
+.case-prose em {
+  @apply italic;
 }
 .case-prose a {
-  @apply text-rose-400 underline decoration-rose-400/40 underline-offset-4 hover:text-rose-300;
+  @apply link;
 }
 .case-prose blockquote {
-  @apply mt-5 border-l-2 border-rose-400/60 pl-5 text-slate-400;
+  @apply mt-6 border-l border-hairline-strong pl-5 italic text-ink-soft;
 }

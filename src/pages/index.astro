@@ -35,66 +35,60 @@ const jsonLd = {
   <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} slot="head" />
 
   <!-- Hero -->
-  <section class="mx-auto max-w-5xl px-6 pb-20 pt-20 md:pb-28 md:pt-32">
-    <p class="text-xs font-medium uppercase tracking-[0.2em] text-rose-300">
-      Edson Ayllon · Senior Product Manager
-    </p>
-    <h1 class="mt-5 max-w-4xl font-display text-5xl leading-[1.05] text-white md:text-7xl">
-      I build financial products people trust with real money.
-    </h1>
-    <p class="mt-7 max-w-2xl text-lg leading-relaxed text-slate-400">
-      Product leader with an engineering edge. Seven years across product and engineering, the
-      last five shipping consumer financial products end to end — strategy, pricing, launches,
-      and growth — most recently leading a cross-functional team of 10 as Senior Product Manager
-      at Chamber. I started as a frontend engineer, and I still ship.
-    </p>
-    <div class="mt-9 flex flex-wrap items-center gap-4">
-      <a
-        href="#work"
-        class="rounded-full bg-rose-400 px-6 py-2.5 text-sm font-semibold text-slate-950 transition-colors hover:bg-rose-300"
-      >
-        View my work
-      </a>
-      <a
-        href={resumePath}
-        class="rounded-full border border-slate-700 px-6 py-2.5 text-sm font-medium text-slate-200 transition-colors hover:border-slate-500 hover:text-white"
-      >
-        Download resume
-      </a>
+  <section class="wash-hero">
+    <div class="mx-auto max-w-5xl px-6 pb-16 pt-24 md:pb-24 md:pt-36">
+      <p class="eyebrow">Edson Ayllon · Senior Product Manager</p>
+      <h1 class="mt-6 max-w-4xl font-serif text-display text-balance text-ink md:text-display-lg">
+        I build financial products people trust with real money.
+      </h1>
+      <p class="mt-8 max-w-2xl font-serif text-lead text-ink-soft">
+        Product leader with an engineering edge. Eight years across product and engineering, the
+        last five shipping consumer financial products end to end — strategy, pricing, launches,
+        and growth — most recently leading a cross-functional team of 10 as Senior Product Manager
+        at Chamber. I started as a frontend engineer, and I still ship.
+      </p>
+      <div class="mt-10 flex flex-wrap items-center gap-3">
+        <a href="#work" class="btn btn-primary">View my work</a>
+        <a href={resumePath} class="btn btn-secondary">Download resume</a>
+      </div>
+      <ul class="mt-12 flex flex-wrap gap-x-6 gap-y-2 font-sans text-sm">
+        {
+          socials.map((s) => (
+            <li>
+              <a href={s.href} rel="me noopener" target="_blank" class="text-ink-mute hover:text-ink">
+                {s.label}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
     </div>
-    <ul class="mt-10 flex flex-wrap gap-x-6 gap-y-2 text-sm">
-      {
-        socials.map((s) => (
-          <li>
-            <a href={s.href} rel="me noopener" target="_blank" class="text-slate-500 hover:text-slate-300">
-              {s.label}
-            </a>
-          </li>
-        ))
-      }
-    </ul>
   </section>
 
-  <!-- Metrics band -->
-  <section aria-label="Career metrics" class="border-t border-slate-800/70">
-    <div class="mx-auto grid max-w-5xl grid-cols-1 gap-10 px-6 py-16 sm:grid-cols-2 lg:grid-cols-4">
+  <!-- Metrics ledger -->
+  <section aria-label="Career metrics" class="border-t border-hairline">
+    <div class="mx-auto grid max-w-5xl grid-cols-1 gap-x-8 gap-y-10 px-6 py-16 sm:grid-cols-2 md:py-20 lg:grid-cols-4">
       {metrics.map((m) => <MetricStat value={m.value} label={m.label} context={m.context} />)}
     </div>
   </section>
 
   <!-- Case studies -->
   <Section id="work" eyebrow="Selected work" title="Case studies">
-    <div class="grid grid-cols-1 gap-6 md:grid-cols-2">
-      {caseStudies.map((study) => <CaseStudyCard study={study} />)}
-    </div>
+    <ol class="divide-y divide-hairline border-y border-hairline">
+      {
+        caseStudies.map((study) => (
+          <li>
+            <CaseStudyCard study={study} />
+          </li>
+        ))
+      }
+    </ol>
   </Section>
 
   <!-- Live products -->
   <Section id="projects" eyebrow="Proof of shipping" title="Live products">
-    <h3 class="text-sm font-medium uppercase tracking-wider text-slate-500">
-      As product leader
-    </h3>
-    <div class="mt-5 grid grid-cols-1 gap-6 md:grid-cols-3">
+    <h3 class="eyebrow">As product leader</h3>
+    <div class="mt-5 grid grid-cols-1 gap-x-8 gap-y-10 md:grid-cols-3">
       {
         professionalProducts.map((p) => (
           <ProjectCard
@@ -106,10 +100,8 @@ const jsonLd = {
         ))
       }
     </div>
-    <h3 class="mt-14 text-sm font-medium uppercase tracking-wider text-slate-500">
-      As independent builder — three AI apps, 2026
-    </h3>
-    <div class="mt-5 grid grid-cols-1 gap-6 md:grid-cols-3">
+    <h3 class="eyebrow mt-14">As independent builder — three AI apps, 2026</h3>
+    <div class="mt-5 grid grid-cols-1 gap-x-8 gap-y-10 md:grid-cols-3">
       {
         personalProducts.map((p) => (
           <ProjectCard
@@ -124,30 +116,27 @@ const jsonLd = {
         ))
       }
     </div>
-    <p class="mt-6 text-sm text-slate-500">
+    <p class="mt-8 font-sans text-sm text-ink-mute">
       How and why I built these three →
-      <a
-        href="/work/ai-apps"
-        class="text-rose-400 underline decoration-rose-400/40 underline-offset-4 hover:text-rose-300"
-      >
-        read the case study</a
-      >.
+      <a href="/work/ai-apps" class="link">read the case study</a>.
     </p>
   </Section>
 
   <!-- Experience -->
   <Section id="experience" eyebrow="Background" title="Experience">
-    <ol class="space-y-10 border-l border-slate-800 pl-6 md:pl-8">
+    <ol class="divide-y divide-hairline border-t border-hairline">
       {
         experience.map((job) => (
-          <li class="relative">
-            <span class="absolute -left-[1.85rem] top-2 size-2 rounded-full bg-rose-400 md:-left-[2.35rem]" aria-hidden="true" />
-            <div class="flex flex-wrap items-baseline gap-x-3 gap-y-1">
-              <h3 class="font-medium text-white">{job.role}</h3>
-              <span class="text-sm text-slate-500">{job.company}</span>
+          <li class="grid gap-x-8 gap-y-1 py-7 md:grid-cols-[11rem_minmax(0,1fr)]">
+            <p class="font-sans text-sm text-ink-mute tabular-nums">{job.period}</p>
+            <div>
+              <h3 class="font-serif text-lg text-ink">
+                {job.role} <span class="text-ink-soft">· {job.company}</span>
+              </h3>
+              {job.summary && (
+                <p class="mt-2 max-w-prose font-sans text-sm leading-relaxed text-ink-soft">{job.summary}</p>
+              )}
             </div>
-            <p class="mt-1 text-sm text-slate-500 tabular-nums">{job.period}</p>
-            {job.summary && <p class="mt-2 max-w-2xl text-sm leading-relaxed text-slate-400">{job.summary}</p>}
           </li>
         ))
       }

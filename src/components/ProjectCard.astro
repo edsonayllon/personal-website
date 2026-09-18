@@ -12,22 +12,17 @@ interface Props {
 const { name, href, domain, description, note, icon, appStore } = Astro.props;
 ---
 
-<div class="flex flex-col rounded-lg border border-slate-800 p-6">
+<div class="flex flex-col border-t border-hairline pt-5">
   <div class="flex items-center gap-3">
-    {icon && <img src={icon} alt="" width="40" height="40" class="size-10 rounded-lg" loading="lazy" />}
+    {icon && <img src={icon} alt="" width="40" height="40" class="size-10 rounded-xs" loading="lazy" />}
     <div>
-      <h3 class="font-medium text-white">{name}</h3>
-      {note && <p class="text-xs text-rose-300">{note}</p>}
+      <h3 class="font-serif text-lg text-ink">{name}</h3>
+      {note && <p class="font-sans text-xs text-lavender">{note}</p>}
     </div>
   </div>
-  <p class="mt-4 text-sm leading-relaxed text-slate-400">{description}</p>
-  <div class="mt-auto flex flex-wrap items-center gap-x-5 gap-y-2 pt-5 text-sm">
-    <a
-      href={href}
-      target="_blank"
-      rel="noopener"
-      class="text-rose-400 underline decoration-rose-400/40 underline-offset-4 hover:text-rose-300"
-    >
+  <p class="mt-4 font-sans text-sm leading-relaxed text-ink-soft">{description}</p>
+  <div class="mt-auto flex flex-wrap items-center gap-x-5 gap-y-2 pt-5 font-sans text-sm">
+    <a href={href} target="_blank" rel="noopener" class="link">
       {domain} ↗
     </a>
     {

@@ -10,17 +10,16 @@ const { study } = Astro.props;
 
 <a
   href={`/work/${study.slug}`}
-  class="group flex flex-col rounded-lg border border-slate-800 p-6 transition-colors hover:border-rose-400/50 md:p-8"
+  class="group grid gap-x-8 gap-y-3 py-8 md:grid-cols-[11rem_minmax(0,1fr)_auto] md:py-10"
 >
-  <p class="text-xs font-medium uppercase tracking-[0.2em] text-rose-300">
-    {study.eyebrow}
-  </p>
-  <h3 class="mt-3 font-display text-2xl text-white group-hover:text-rose-100">
-    {study.title}
-  </h3>
-  <p class="mt-3 text-sm leading-relaxed text-slate-400">{study.outcome}</p>
-  <p class="mt-auto pt-6 text-sm font-medium text-rose-400 tabular-nums">
-    {study.metric}
-    <span class="ml-1 inline-block transition-transform group-hover:translate-x-1" aria-hidden="true">→</span>
+  <p class="eyebrow">{study.eyebrow}</p>
+  <div>
+    <h3 class="font-serif text-2xl leading-snug text-ink group-hover:text-seaglass-deep">
+      {study.title}
+    </h3>
+    <p class="mt-2 max-w-prose font-serif text-base leading-relaxed text-ink-soft">{study.outcome}</p>
+  </div>
+  <p class="font-sans text-sm font-medium text-seaglass tabular-nums md:text-right">
+    {study.metric} <span aria-hidden="true">→</span>
   </p>
 </a>
