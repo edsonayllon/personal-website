@@ -1,4 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-  <rect width="64" height="64" rx="14" fill="#020617"/>
-  <text x="32" y="44" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="34" font-weight="600" fill="#fb7185">EA</text>
+  <rect width="64" height="64" rx="12" fill="#faf6f1"/>
+  <rect x="0.5" y="0.5" width="63" height="63" rx="11.5" fill="none" stroke="#d0d9de"/>
+  <text x="32" y="44" text-anchor="middle" font-family="'Iowan Old Style', Palatino, Georgia, serif" font-size="32" font-weight="500" fill="#192837">EA</text>
 </svg>

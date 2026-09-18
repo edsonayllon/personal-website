@@ -13,6 +13,7 @@ and a generated sitemap. Hosted on Firebase Hosting (`personal-website-8a190`).
 - `src/content/site.ts` — single source of truth for metrics, links, and timeline
   (keep figures character-identical to the resume PDF)
 - `src/layouts/BaseLayout.astro` — SEO head (title/description/canonical/OG/JSON-LD)
+- `src/styles/global.css` — every design token (colors, fonts, type scale) lives in its `@theme` block; markup uses semantic utilities only
 - `public/resume/edson-ayllon-resume.pdf` — downloadable resume
 
 ## Commands

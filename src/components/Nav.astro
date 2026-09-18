@@ -2,25 +2,20 @@
 import { resumePath } from '../content/site';
 ---
 
-<header class="sticky top-0 z-40 border-b border-slate-800/70 bg-slate-950/80 backdrop-blur">
+<header class="sticky top-0 z-40 border-b border-hairline bg-pearl">
   <nav
     aria-label="Main"
     class="mx-auto flex h-16 max-w-5xl items-center justify-between px-6"
   >
-    <a href="/" class="font-display text-lg text-white hover:text-rose-300">
+    <a href="/" class="font-serif text-lg text-ink hover:text-seaglass-deep">
       <span class="hidden sm:inline">Edson Ayllon</span>
       <span class="sm:hidden">EA</span>
     </a>
-    <div class="flex items-center gap-4 text-sm sm:gap-7">
-      <a href="/#work" class="text-slate-300 hover:text-white">Work</a>
-      <a href="/#projects" class="text-slate-300 hover:text-white">Projects</a>
-      <a href="/#contact" class="hidden text-slate-300 hover:text-white min-[420px]:inline">Contact</a>
-      <a
-        href={resumePath}
-        class="rounded-full border border-rose-400/40 px-3 py-1.5 font-medium text-rose-300 transition-colors hover:border-rose-300 hover:text-rose-200 sm:px-4"
-      >
-        Resume
-      </a>
+    <div class="flex items-center gap-4 font-sans text-sm sm:gap-7">
+      <a href="/#work" class="text-ink-soft hover:text-ink">Work</a>
+      <a href="/#projects" class="text-ink-soft hover:text-ink">Projects</a>
+      <a href="/#contact" class="hidden text-ink-soft hover:text-ink min-[420px]:inline">Contact</a>
+      <a href={resumePath} class="btn btn-secondary px-4 py-1.5">Resume</a>
     </div>
   </nav>
 </header>
