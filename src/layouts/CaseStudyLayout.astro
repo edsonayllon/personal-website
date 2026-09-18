@@ -37,48 +37,43 @@ const jsonLd = {
   <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} slot="head" />
 
   <article>
-    <header class="mx-auto max-w-5xl px-6 pb-4 pt-16 md:pt-24">
-      <p class="text-xs font-medium uppercase tracking-[0.2em] text-rose-300">
+    <header class="mx-auto max-w-5xl px-6 pb-4 pt-20 md:pt-28">
+      <p class="eyebrow">
         Case study{study ? ` · ${study.eyebrow}` : ''}
       </p>
-      <h1 class="mt-4 max-w-3xl font-display text-4xl leading-tight text-white md:text-5xl">
+      <h1 class="mt-5 max-w-3xl font-serif text-4xl leading-[1.08] text-balance text-ink md:text-5xl">
         {title}
       </h1>
-      <p class="mt-5 text-slate-400">{role} · {timeframe}</p>
-      <div class="mt-12 grid grid-cols-1 gap-8 border-y border-slate-800/70 py-10 sm:grid-cols-3">
+      <p class="mt-5 font-sans text-sm text-lavender">{role} · {timeframe}</p>
+      <div class="mt-12 grid grid-cols-1 gap-x-8 gap-y-8 border-b border-hairline pb-10 sm:grid-cols-3">
         {metrics.map((m) => <MetricStat value={m.value} label={m.label} size="md" />)}
       </div>
     </header>
 
-    <div class="case-prose mx-auto max-w-2xl px-6 pb-20 pt-8">
+    <div class="case-prose mx-auto max-w-prose px-6 pb-24 pt-10">
       <slot />
     </div>
   </article>
 
-  <nav aria-label="More case studies" class="border-t border-slate-800/70">
+  <nav aria-label="More case studies" class="border-t border-hairline">
     <div class="mx-auto flex max-w-5xl flex-col gap-6 px-6 py-12 sm:flex-row sm:items-center sm:justify-between">
-      <div class="flex flex-col gap-2 text-sm">
+      <div class="flex flex-col gap-2 font-serif text-base">
         {
           prev && (
-            <a href={`/work/${prev.slug}`} class="text-slate-300 hover:text-white">
+            <a href={`/work/${prev.slug}`} class="text-ink-soft hover:text-ink">
               ← {prev.title}
             </a>
           )
         }
         {
           next && (
-            <a href={`/work/${next.slug}`} class="text-slate-300 hover:text-white">
+            <a href={`/work/${next.slug}`} class="text-ink-soft hover:text-ink">
               {next.title} →
             </a>
           )
         }
       </div>
-      <a
-        href={resumePath}
-        class="shrink-0 rounded-full border border-rose-400/40 px-5 py-2 text-sm font-medium text-rose-300 transition-colors hover:border-rose-300 hover:text-rose-200"
-      >
-        Download resume
-      </a>
+      <a href={resumePath} class="btn btn-secondary shrink-0">Download resume</a>
     </div>
   </nav>
 </BaseLayout>
