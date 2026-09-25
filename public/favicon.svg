@@ -1,5 +1,16 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-  <rect width="64" height="64" rx="12" fill="#faf6f1"/>
-  <rect x="0.5" y="0.5" width="63" height="63" rx="11.5" fill="none" stroke="#d0d9de"/>
-  <text x="32" y="44" text-anchor="middle" font-family="'Iowan Old Style', Palatino, Georgia, serif" font-size="32" font-weight="500" fill="#192837">EA</text>
+  <!-- Sunrise: a pale yellow half sun over the hero's lavender-to-sea-glass sky. Yellow sits opposite lavender, so the sun pops. -->
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#8275b7"/>
+      <stop offset="0.5" stop-color="#7e90c7"/>
+      <stop offset="1" stop-color="#5ba7aa"/>
+    </linearGradient>
+    <radialGradient id="sun" cx="32" cy="41" r="22" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#feeba6"/>
+      <stop offset="1" stop-color="#fcd679"/>
+    </radialGradient>
+  </defs>
+  <rect width="64" height="64" rx="12" fill="url(#sky)"/>
+  <path d="M10 41a22 22 0 0 1 44 0z" fill="url(#sun)"/>
 </svg>
