@@ -82,10 +82,10 @@ export const caseStudies: CaseStudy[] = [
   {
     slug: 'ai-apps',
     eyebrow: 'Independent · 2026',
-    title: 'Three AI products, three different AI architectures',
+    title: 'Four AI products, four different AI architectures',
     outcome:
-      'Shipped three complete consumer apps — cloud LLM, hybrid cloud/on-device, and cross-platform — all live, all three on the App Store.',
-    metric: '3 live products · 3 App Store releases',
+      'Shipped four complete consumer apps — cloud LLM, hybrid cloud/on-device, fully on-device, and cross-platform — three on the App Store, the fourth in Mac App Store review.',
+    metric: '4 products · 3 App Store releases, 1 in review',
   },
 ];
 
@@ -141,6 +141,17 @@ export const personalProducts = [
       'AI calorie tracker for iPhone — photograph a meal, AI estimates calories and macros as honest ranges.',
     note: 'Gemini · on-device fallback',
     appStore: 'https://apps.apple.com/us/app/grava/id6790959541',
+  },
+  {
+    name: 'Delecto',
+    href: 'https://delecto.app',
+    domain: 'delecto.app',
+    icon: '/projects/delecto-icon.png',
+    description:
+      'Native Mac app that culls a photo shoot like a tournament — two photos at a time, pick the winner, keep the survivors.',
+    note: 'On-device AI · no cloud',
+    // In Mac App Store review — swap for `appStore` once the listing is live.
+    status: 'Coming soon to the Mac App Store',
   },
 ] as const;
 
