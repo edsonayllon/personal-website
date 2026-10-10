@@ -4,7 +4,7 @@ Personal portfolio of Edson Ayllon — product leader for consumer financial pro
 
 Built with [Astro 5](https://astro.build) and Tailwind CSS 4. Fully static output:
 every page ships as real HTML with unique meta/OG tags, JSON-LD structured data,
-and a generated sitemap. Hosted on Firebase Hosting (`personal-website-8a190`).
+and a generated sitemap. Hosted on Firebase Hosting.
 
 ## Structure
 
@@ -29,7 +29,7 @@ and a generated sitemap. Hosted on Firebase Hosting (`personal-website-8a190`).
 
 Pushes to the `release` branch deploy automatically: `.github/workflows/deploy.yml`
 builds the site and publishes it to the live Firebase Hosting channel, authenticating
-with the `FIREBASE_SERVICE_ACCOUNT_PERSONAL_WEBSITE_8A190` repository secret. Land
+with a service-account key stored as a repository secret. Land
 work on `main`, then open a PR from `main` into `release`; merging it ships.
 `npm run deploy` remains available as a manual fallback.
 
