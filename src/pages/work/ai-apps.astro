@@ -4,23 +4,23 @@ import CaseStudyLayout from '../../layouts/CaseStudyLayout.astro';
 
 <CaseStudyLayout
   slug="ai-apps"
-  title="Three AI products, three different AI architectures"
-  description="Cleared, IronProof, and Grava — three complete consumer apps shipped solo, each a deliberate bet on a different AI product architecture. All live; all three on the App Store."
+  title="Four AI products, four different AI architectures"
+  description="Cleared, IronProof, Grava, and Delecto — four complete consumer apps shipped solo, each a deliberate bet on a different AI product architecture. Three are live on the App Store; the fourth is in Mac App Store review."
   role="Independent — design, product, engineering"
   timeframe="2026"
   metrics={[
-    { value: '3', label: 'Complete products, all live' },
-    { value: '3', label: 'Distinct AI architectures' },
-    { value: '3', label: 'App Store releases' },
+    { value: '4', label: 'Complete products' },
+    { value: '4', label: 'Distinct AI architectures' },
+    { value: '3', label: 'App Store releases, a fourth in review' },
   ]}
 >
   <h2>Why</h2>
   <p>
     AI changes what one person can ship — and it changes what "good AI product judgment" means.
-    Reading about that is one thing. To pressure-test it, I set out to ship three complete
+    Reading about that is one thing. To pressure-test it, I set out to ship four complete
     consumer products, each built on a <strong>deliberately different AI architecture</strong>:
-    cloud LLM, a cloud model with an on-device fallback, and no model at all. Every one is
-    live today with its own brand, website, and users' data to protect.
+    cloud LLM, a cloud model with an on-device fallback, fully on-device, and no model at all.
+    Every one has its own brand, website, and users' data to protect.
   </p>
 
   <h2>Cleared — an opinionated AI to-do app</h2>
@@ -113,20 +113,60 @@ import CaseStudyLayout from '../../layouts/CaseStudyLayout.astro';
     </li>
   </ul>
 
-  <h2>What building all three taught me</h2>
+  <h2>Delecto — culling a shoot, tournament-style</h2>
+  <p>
+    <a href="https://delecto.app" target="_blank" rel="noopener">delecto.app</a> ·
+    <em>"600 frames. Four keepers. One bracket."</em> · in Mac App Store review
+  </p>
+  <p>
+    A native Mac app for photographers. Star ratings ask a question nobody can answer at a
+    glance — three stars or four? Delecto asks the one you can: <em>which of these two is
+    better?</em> It shuffles a shoot into a single-elimination bracket and shows two photos at a
+    time. Winners advance round by round, and you can stop whenever you're down to the handful
+    you wanted. Every pick is saved the moment you make it, and no file moves until you export.
+  </p>
+  <ul>
+    <li>
+      <strong>The AI bet — fully on-device, designed around what the model can't do.</strong>
+      Optional Apple Intelligence culling decides every match on the Mac itself: no networking
+      code, no account, no API key, no cost per decision. On macOS 26 the on-device model reads
+      text, not pixels, so each photo is first measured with Apple's Vision framework —
+      aesthetics, sharpness, lens smudge, clipped exposure, faces, horizon tilt — and the model
+      judges the two sets of measurements against criteria the user can rewrite. Every verdict
+      carries a one-line reason; when the model's guardrails decline a match, it's decided on
+      quality scores alone and labeled that way.
+    </li>
+    <li>
+      <strong>Honest about speed.</strong> A verdict takes about 8 to 20 seconds on an M1 Pro, so
+      AI culling is framed as an unattended run — start it, make coffee, come back to a decided
+      bracket — and <em>Suggest</em> shows which photo the AI would pick, and why, without
+      deciding for you.
+    </li>
+    <li>
+      SwiftUI, Vision, Foundation Models, and ImageIO, which decodes HEIC and camera RAW natively —
+      sandboxed, with zero third-party dependencies. Semantic-release cuts versions; Xcode Cloud
+      builds and uploads to the Mac App Store.
+    </li>
+  </ul>
+
+  <h2>What building all four taught me</h2>
   <ul>
     <li>
       <strong>Architecture is a product decision.</strong> Cloud models buy capability and cost
       you unit economics; on-device models buy privacy and offline reach and cost you accuracy.
       Grava started fully on-device and moved to cloud-first once testing showed the small model's
       calorie estimates weren't good enough to trust — keeping it as the fallback rather than
-      shipping "works offline" as a promise the accuracy couldn't cover. Choosing per product —
-      and revising the choice when the evidence changes — is the actual skill.
+      shipping "works offline" as a promise the accuracy couldn't cover. Delecto made the opposite
+      call on the same tradeoff: its promise is that photos never leave the Mac, and the hard
+      quality calls are measurements Vision makes reliably, so the small model only has to add
+      taste and an explanation. Choosing per product — and revising the choice when the evidence
+      changes — is the actual skill.
     </li>
     <li>
       <strong>AI compresses build time, not judgment time.</strong> The models wrote a lot of
       code. Deciding what each product refuses to do — Cleared's single-request budget, Grava's
-      ranges instead of false precision — was still the work.
+      ranges instead of false precision, Delecto never deciding a match without saying why — was
+      still the work.
     </li>
     <li>
       <strong>Shipping is the credential.</strong> Brands, websites, App Store review, auth,

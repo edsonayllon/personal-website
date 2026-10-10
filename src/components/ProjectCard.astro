@@ -7,9 +7,10 @@ interface Props {
   note?: string;
   icon?: string;
   appStore?: string;
+  status?: string;
 }
 
-const { name, href, domain, description, note, icon, appStore } = Astro.props;
+const { name, href, domain, description, note, icon, appStore, status } = Astro.props;
 ---
 
 <div class="flex flex-col border-t border-hairline pt-5">
@@ -30,6 +31,13 @@ const { name, href, domain, description, note, icon, appStore } = Astro.props;
         <a href={appStore} target="_blank" rel="noopener" class="shrink-0">
           <img src="/projects/app-store-badge.svg" alt={`Download ${name} on the App Store`} height="36" class="h-9 w-auto" loading="lazy" />
         </a>
+      )
+    }
+    {
+      !appStore && status && (
+        <span class="inline-flex h-9 shrink-0 items-center rounded-[7.5px] border border-dashed border-hairline-strong px-3 text-xs text-ink-soft">
+          {status}
+        </span>
       )
     }
   </div>

@@ -100,8 +100,8 @@ const jsonLd = {
         ))
       }
     </div>
-    <h3 class="eyebrow mt-14">As independent builder — three AI apps, 2026</h3>
-    <div class="mt-5 grid grid-cols-1 gap-x-8 gap-y-10 md:grid-cols-3">
+    <h3 class="eyebrow mt-14">As independent builder — four AI apps, 2026</h3>
+    <div class="mt-5 grid grid-cols-1 gap-x-8 gap-y-10 md:grid-cols-2">
       {
         personalProducts.map((p) => (
           <ProjectCard
@@ -112,12 +112,13 @@ const jsonLd = {
             note={p.note}
             icon={p.icon}
             appStore={'appStore' in p ? p.appStore : undefined}
+            status={'status' in p ? p.status : undefined}
           />
         ))
       }
     </div>
     <p class="mt-8 font-sans text-sm text-ink-mute">
-      How and why I built these three →
+      How and why I built these four →
       <a href="/work/ai-apps" class="link">read the case study</a>.
     </p>
   </Section>
