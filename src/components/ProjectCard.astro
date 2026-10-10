@@ -33,6 +33,12 @@ const { name, href, domain, description, note, icon, appStore, status } = Astro.
         </a>
       )
     }
-    {!appStore && status && <p class="flex h-9 items-center text-xs text-ink-mute">{status}</p>}
+    {
+      !appStore && status && (
+        <span class="inline-flex h-9 shrink-0 items-center rounded-[7.5px] border border-dashed border-hairline-strong px-3 text-xs text-ink-soft">
+          {status}
+        </span>
+      )
+    }
   </div>
 </div>
