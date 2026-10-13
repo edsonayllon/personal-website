@@ -7,10 +7,14 @@ interface Props {
   note?: string;
   icon?: string;
   appStore?: string;
+  // Mac apps get the "Mac App Store" badge, per Apple's badge guidelines.
+  platform?: 'mac';
   status?: string;
 }
 
-const { name, href, domain, description, note, icon, appStore, status } = Astro.props;
+const { name, href, domain, description, note, icon, appStore, platform, status } = Astro.props;
+const store = platform === 'mac' ? 'Mac App Store' : 'App Store';
+const badge = platform === 'mac' ? '/projects/mac-app-store-badge.svg' : '/projects/app-store-badge.svg';
 ---
 
 <div class="flex flex-col border-t border-hairline pt-5">
@@ -29,7 +33,7 @@ const { name, href, domain, description, note, icon, appStore, status } = Astro.
     {
       appStore && (
         <a href={appStore} target="_blank" rel="noopener" class="shrink-0">
-          <img src="/projects/app-store-badge.svg" alt={`Download ${name} on the App Store`} height="36" class="h-9 w-auto" loading="lazy" />
+          <img src={badge} alt={`Download ${name} on the ${store}`} height="36" class="h-9 w-auto" loading="lazy" />
         </a>
       )
     }

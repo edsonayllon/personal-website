@@ -84,8 +84,8 @@ export const caseStudies: CaseStudy[] = [
     eyebrow: 'Independent · 2026',
     title: 'Four AI products, four different AI architectures',
     outcome:
-      'Shipped four complete consumer apps — cloud LLM, hybrid cloud/on-device, fully on-device, and cross-platform — three on the App Store, the fourth in Mac App Store review.',
-    metric: '4 products · 3 App Store releases, 1 in review',
+      'Shipped four complete consumer apps — cloud LLM, hybrid cloud/on-device, fully on-device, and cross-platform — all four live on the App Store.',
+    metric: '4 products · 4 App Store releases',
   },
 ];
 
@@ -150,8 +150,8 @@ export const personalProducts = [
     description:
       'Native Mac app that culls a photo shoot like a tournament — two photos at a time, pick the winner, keep the survivors.',
     note: 'On-device AI · no cloud',
-    // In Mac App Store review — swap for `appStore` once the listing is live.
-    status: 'Coming soon to the Mac App Store',
+    appStore: 'https://apps.apple.com/us/app/delecto/id6819971928',
+    platform: 'mac',
   },
 ] as const;
 
