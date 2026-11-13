@@ -82,10 +82,10 @@ export const caseStudies: CaseStudy[] = [
   {
     slug: 'ai-apps',
     eyebrow: 'Independent · 2026',
-    title: 'Four AI products, four different AI architectures',
+    title: 'Five AI products, four different AI architectures',
     outcome:
-      'Shipped four complete consumer apps — cloud LLM, hybrid cloud/on-device, fully on-device, and cross-platform — all four live on the App Store.',
-    metric: '4 products · 4 App Store releases',
+      'Shipped five complete consumer apps across four AI architectures — cloud LLM, hybrid cloud/on-device, fully on-device, and cross-platform — all five live on the App Store.',
+    metric: '5 products · 5 App Store releases',
   },
 ];
 
@@ -152,6 +152,16 @@ export const personalProducts = [
     note: 'On-device AI · no cloud',
     appStore: 'https://apps.apple.com/us/app/delecto/id6819971928',
     platform: 'mac',
+  },
+  {
+    name: 'Vesica',
+    href: 'https://vesicabible.com',
+    domain: 'vesicabible.com',
+    icon: '/projects/vesica-icon.png',
+    description:
+      'A quiet Bible for iPhone, iPad, Mac and the web, made for time with God: pages that turn like paper, a notebook beside them, and answers that quote Scripture.',
+    note: 'Claude · answers quoted from your Bible',
+    appStore: 'https://apps.apple.com/us/app/vesica-bible-notes-ask-ai/id6825175034',
   },
 ] as const;
 
