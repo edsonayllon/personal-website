@@ -100,7 +100,7 @@ const jsonLd = {
         ))
       }
     </div>
-    <h3 class="eyebrow mt-14">As independent builder — five AI apps, 2026</h3>
+    <h3 class="eyebrow mt-14">As independent builder — five AI apps and a game, 2026</h3>
     <div class="mt-5 grid grid-cols-1 gap-x-8 gap-y-10 md:grid-cols-2">
       {
         personalProducts.map((p) => (
@@ -113,6 +113,7 @@ const jsonLd = {
             icon={p.icon}
             appStore={'appStore' in p ? p.appStore : undefined}
             platform={'platform' in p ? p.platform : undefined}
+            quest={'quest' in p ? p.quest : undefined}
           />
         ))
       }

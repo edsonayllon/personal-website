@@ -163,6 +163,17 @@ export const personalProducts = [
     note: 'Claude · answers quoted from your Bible',
     appStore: 'https://apps.apple.com/us/app/vesica-bible-notes-ask-ai/id6825175034',
   },
+  {
+    name: 'Sudoku Cubes',
+    href: 'https://sudokucubes.com',
+    domain: 'sudokucubes.com',
+    icon: '/projects/sudoku-cubes-icon.png',
+    description:
+      'A 3D sudoku game: six puzzles wrapped around a cube and linked at the edges. Spin it, pick a cell, fill it in — hand-drawn and watercolor-soft.',
+    note: 'Game · iPhone, iPad, Mac, Vision Pro, Meta Quest',
+    appStore: 'https://apps.apple.com/us/app/sudoku-cubes-spin-solve/id6823939949',
+    quest: 'https://www.meta.com/experiences/sudoku-cubes/1399039599958309/',
+  },
 ] as const;
 
 export const experience = [
