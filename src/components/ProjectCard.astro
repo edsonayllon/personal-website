@@ -9,7 +9,7 @@ interface Props {
   appStore?: string;
   // Mac apps get the "Mac App Store" badge, per Apple's badge guidelines.
   platform?: 'mac';
-  // Meta Horizon Store listing, shown as a text link (no official badge on hand).
+  // Meta Horizon Store listing. Meta publishes no store badge, so ours is drawn to match Apple's.
   quest?: string;
   status?: string;
 }
@@ -41,8 +41,8 @@ const badge = platform === 'mac' ? '/projects/mac-app-store-badge.svg' : '/proje
     }
     {
       quest && (
-        <a href={quest} target="_blank" rel="noopener" class="link" aria-label={`${name} on the Meta Horizon Store for Meta Quest`}>
-          Meta Quest ↗
+        <a href={quest} target="_blank" rel="noopener" class="shrink-0">
+          <img src="/projects/meta-quest-badge.svg" alt={`Get ${name} on Meta Quest from the Meta Horizon Store`} height="36" class="h-9 w-auto" loading="lazy" />
         </a>
       )
     }

@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="122" height="40" viewBox="0 0 122 40">
+  <title>Get it on Meta Quest</title>
+  <!-- Drawn to sit beside Apple's App Store badge (same height, corners and border). Meta publishes no store badge,
+       so this uses a generic headset glyph, not the Meta logo. -->
+  <rect x="0.5" y="0.5" width="121" height="39" rx="6.5" fill="#000" stroke="#a6a6a6"/>
+  <path transform="translate(4.2 6.6) scale(1.2)" fill="#fff" d="M4 8.5C4 7.1 5.1 6 6.5 6h11C18.9 6 20 7.1 20 8.5v5c0 1.4-1.1 2.5-2.5 2.5h-2.2c-.8 0-1.5-.4-1.9-1.1l-.5-.8c-.4-.6-1.4-.6-1.8 0l-.5.8c-.4.7-1.1 1.1-1.9 1.1H6.5C5.1 16 4 14.9 4 13.5v-5zm4 1.5a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zm8 0a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3z"/>
+  <g fill="#fff" font-family="-apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif">
+    <text x="35" y="15.2" font-size="7.6" textLength="31" lengthAdjust="spacingAndGlyphs">Get it on</text>
+    <text x="34.4" y="30" font-size="15" font-weight="500" textLength="77" lengthAdjust="spacingAndGlyphs">Meta Quest</text>
+  </g>
+</svg>
